@@ -1,4 +1,4 @@
-module Session
+module SessionService
   class Create
     include Authenticate
 
