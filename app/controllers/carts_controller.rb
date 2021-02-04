@@ -5,6 +5,8 @@ class CartsController < ApplicationController
   end
 
   def update
+    cart = ShoppingCart::Update.new(cart_params).call
+    render json: cart
   end
 
   def destroy
@@ -14,8 +16,10 @@ class CartsController < ApplicationController
 
   def cart_params
     params.permit(
+      :id,
       :user_id,
       line_items_attributes: [:id, :product_id]
     )
   end
+
 end
