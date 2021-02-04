@@ -9,6 +9,7 @@ class Product
 
   belongs_to :store
   embeds_many :variants
+  has_many :line_items
 
   field :name, type: String
   field :rating, type: Integer
