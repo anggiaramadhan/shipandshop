@@ -9,5 +9,6 @@ class Order
   field :status, type: String, default: NEW
 
   belongs_to :user
-  belongs_to :product
+  has_many :order_items
+  accepts_nested_attributes_for :order_items
 end
