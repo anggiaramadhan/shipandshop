@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   def create
+    order = OrderTransaction::Create.new(order_params).call
+    render json: order
   end
 
   private
