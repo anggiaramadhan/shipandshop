@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     orders = OrderTransaction::Index.new(order_index_params).call
+    render json: orders
   end
 
   def create
