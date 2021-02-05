@@ -9,16 +9,13 @@ class CartsController < ApplicationController
     render json: cart
   end
 
-  def destroy
-  end
-
   private
 
   def cart_params
     params.permit(
       :id,
       :user_id,
-      line_items_attributes: [:id, :product_id]
+      line_items_attributes: %i[id product_id store_id variant_id]
     )
   end
 

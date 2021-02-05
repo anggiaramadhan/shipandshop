@@ -19,12 +19,12 @@ module ShoppingCart
       @cart ||= Cart.find(id)
     end
 
-    def product_ids
-      line_items_attrs.pluck(:product_id)
+    def product_variant_ids
+      line_items_attrs.pluck(:product_variant_id)
     end
 
     def line_items
-      @line_items ||= cart.line_items.where(:product_id.in => product_ids)
+      @line_items ||= cart.line_items.where(:product_variant_id.in => product_variant_ids)
     end
 
     def update_cart
@@ -34,7 +34,7 @@ module ShoppingCart
     def response
       {
         status: :ok,
-        message: 'product has been removed from cart'
+        message: 'product has been update from cart'
       }
     end
   end

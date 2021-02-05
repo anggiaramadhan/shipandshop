@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :sessions, only: :create
   resources :registrations, only: :create
   resources :products, only: :index
-  resources :carts, only: [:index, :create, :update, :destroy]
+  resources :carts, only: [:index, :create, :update]
+  resources :orders, only: [:index, :create]
 end

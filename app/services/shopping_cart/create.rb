@@ -28,9 +28,9 @@ module ShoppingCart
     def line_items_serializer(data)
       data.line_items.map do |item|
         {
-          id: item.product.id.to_s,
-          name: item.product.name,
-          description: item.product.description
+          id: item.product_variant.id.to_s,
+          name: item.product_variant.product.name,
+          description: item.product_variant.product.description
         }
       end
     end
